@@ -1,64 +1,82 @@
-# gh-aw: GitHub Actions Workflow Security Scanner
+# gh-aw
 
-A lightweight security scanner focused specifically on GitHub Actions workflows.
+## Detailed Description
 
-## Installation
+gh-aw is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
+
+## Problem Statement
+
+Describe the user or business problem this project solves, the target users, and expected outcomes.
+
+## Solution Overview
+
+Summarize the architecture, core modules, and runtime behavior at a high level.
+
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-pip install -r requirements.txt
-# or just run directly - no dependencies needed!
+make test
+make lint
 ```
 
 ## Usage
 
-```bash
-# Scan a workflow file
-python3 scanner.py .github/workflows/
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-# JSON output
-python3 scanner.py .github/workflows/ --json
-```
+## Quality Standards
 
-## Features
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-- **Excessive Permissions Detection**: Detects overly permissive token settings
-- **Unsafe Command Detection**: Finds dangerous shell commands
-- **Secret Exposure Detection**: Identifies hardcoded secrets
-- **Data Leakage Prevention**: Catches potential secret logging
+## Security
 
-## Rules
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-| Rule ID | Severity | Description |
-|---------|----------|-------------|
-| PERM001 | HIGH | contents:write permission |
-| PERM002 | CRITICAL | Admin permissions |
-| PERM003 | CRITICAL | Secrets write access |
-| PERM004 | CRITICAL | pull_request_target usage |
-| EXEC001 | CRITICAL | rm -rf / |
-| EXEC002 | CRITICAL | eval command |
-| EXEC009 | CRITICAL | curl pipe sh |
-| EXEC010 | CRITICAL | wget pipe sh |
-| EXEC015 | CRITICAL | Privileged Docker |
-| SECR002 | CRITICAL | GitHub PAT detected |
-| SECR006 | CRITICAL | AWS Access Key |
-| SECR007 | CRITICAL | OpenAI API Key |
-| SECR010 | CRITICAL | Slack Token |
-| DATA017 | HIGH | Secret logging |
-| DATA018 | HIGH | HTTP (not HTTPS) |
+## Contributing
 
-## Example Output
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-```
-🔍 gh-aw: GitHub Actions Security Scanner
-   Files scanned: 3
-   Findings: 5
+## Roadmap
 
-[1] Overly Permissive GitHub Token (contents:write)
-    Severity: HIGH
-    File: .github/workflows/ci.yml
-    Recommendation: Use 'contents: read' unless write access is required
-```
+Track upcoming milestones, technical debt, and planned feature work.
+
+## Support
+
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT
+This project is released under the MIT License.
