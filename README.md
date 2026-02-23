@@ -1,5 +1,12 @@
 # gh-aw
 
+Production-grade project scaffold focused on reliability, maintainability, and fast onboarding.
+
+[![CI](https://img.shields.io/github/actions/workflow/status/yksanjo/gh-aw/ci.yml?branch=main&label=ci)](https://github.com/yksanjo/gh-aw/actions)
+![License](https://img.shields.io/github/license/yksanjo/gh-aw)
+![Last Commit](https://img.shields.io/github/last-commit/yksanjo/gh-aw)
+![Repo Size](https://img.shields.io/github/repo-size/yksanjo/gh-aw)
+
 ## Detailed Description
 
 gh-aw is maintained as an industry-grade software project with production-ready engineering practices.  
